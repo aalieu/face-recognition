@@ -35,6 +35,12 @@ class SignIn extends React.Component {
       });
   };
 
+  handleKeyPress = (event) => {
+    if (event.charCode === 13) {
+      this.onSubmitSignIn();
+    }
+  };
+
   render() {
     const { onRouteChange } = this.props;
     return (
@@ -61,6 +67,7 @@ class SignIn extends React.Component {
                 </label>
                 <input
                   onChange={this.onPasswordChange}
+                  onKeyPress={this.handleKeyPress}
                   className='b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
                   type='password'
                   name='password'

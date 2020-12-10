@@ -41,6 +41,12 @@ class Register extends React.Component {
       });
   };
 
+  handleKeyPress = (event) => {
+    if (event.charCode === 13) {
+      this.onSubmitRegister();
+    }
+  };
+
   render() {
     return (
       <article className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center'>
@@ -78,6 +84,7 @@ class Register extends React.Component {
                 </label>
                 <input
                   onChange={this.onPasswordChange}
+                  onKeyPress={this.handleKeyPress}
                   className='b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
                   type='password'
                   name='password'
